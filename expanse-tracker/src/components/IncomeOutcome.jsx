@@ -6,6 +6,9 @@ const IncomeOutcome = () => {
 
   const amount = transactions.map((trs) => trs.amount);
 
+  if (!amount) {
+    return;
+  }
   const income = amount
     .filter((val) => val > 0)
     .reduce((acc, curr) => (acc += curr));

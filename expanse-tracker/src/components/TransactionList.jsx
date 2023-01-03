@@ -8,7 +8,7 @@ const TransactionList = () => {
   const renderTransactions = transactions.map((transaction) => {
     return <TransactionItem key={transaction.id} transaction={transaction} />;
   });
-  return <ul>{renderTransactions}</ul>;
+  return <div>{renderTransactions}</div>;
 };
 
 export default TransactionList;

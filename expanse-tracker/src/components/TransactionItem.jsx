@@ -4,9 +4,9 @@ import { GlobalContext } from "../context/GlobalState";
 const TransactionItem = ({ transaction }) => {
   const { deleteTransaction } = useContext(GlobalContext);
   return (
-    <li onClick={() => deleteTransaction(transaction.id)}>
+    <div key={transaction.id} onClick={() => deleteTransaction(transaction.id)}>
       {transaction.text}
-    </li>
+    </div>
   );
 };
 
