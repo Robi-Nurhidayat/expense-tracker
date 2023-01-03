@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 const TransactionItem = ({ transaction }) => {
-  return <li>{transaction.text}</li>;
+  const { deleteTransaction } = useContext(GlobalContext);
+  return (
+    <li onClick={() => deleteTransaction(transaction.id)}>
+      {transaction.text}
+    </li>
+  );
 };
 
 export default TransactionItem;
